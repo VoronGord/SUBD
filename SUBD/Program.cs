@@ -1,13 +1,13 @@
 ﻿using DB;
-using GoryanovDB;
-using GoryaynovDB.Logic;
-using GoryaynovDB.Models;
+
+using DB.Logic;
+using DB.Models;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Linq;
 using System.Text;
 
-namespace GoryaynovDB
+namespace DB
 {
     class Program
     {
