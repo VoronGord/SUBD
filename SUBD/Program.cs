@@ -1,5 +1,5 @@
-﻿using GoryaynovDB.Logic;
-using GoryaynovDB.Models;
+﻿using DB.Logic;
+using DB.Models;
 using System;
 using System.Linq;
 using System.Text;
@@ -24,6 +24,8 @@ namespace GoryaynovDB
                 Console.WriteLine(UpdateType());
                 Console.WriteLine(UpdateProvider());
                 Console.WriteLine(DeleteType());
+                Console.WriteLine(LabScript());
+                
                
             }
             catch (Exception ex)
