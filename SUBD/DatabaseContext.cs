@@ -6,7 +6,7 @@ using System.IO;
 using System.Text;
 
 namespace DB
-{
+{ 
     class DatabaseContext : DbContext
     {
         const string CONFIG_FILE_ADDRESS = "config.txt";
