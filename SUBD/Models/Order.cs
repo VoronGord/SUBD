@@ -30,3 +30,4 @@ namespace DB.Models
         public int Product { get; set; }
     }
 }
+ 
