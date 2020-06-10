@@ -1,4 +1,4 @@
-﻿using GoryaynovDB.Models;
+﻿using DB.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
