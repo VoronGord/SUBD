@@ -1,11 +1,11 @@
-﻿using GoryaynovDB.Logic;
-using GoryaynovDB.Models;
+﻿using DB.Logic;
+using DB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GoryaynovDB
+namespace DB
 {
     class update
     {
