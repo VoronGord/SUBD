@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using System.Text;
 
-namespace GoryaynovDB
+namespace DB
 {
     class Program
     {
