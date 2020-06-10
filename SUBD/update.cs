@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DB
 { 
-    class update
+    class update 
     {
         public double UpdateProvider()
         {
