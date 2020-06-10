@@ -7,7 +7,7 @@ using System.Text;
 namespace DB.Models
 {
     [Table("client")]
-    public class Client
+    public class Client 
     {
         [Key]
         [Required]
