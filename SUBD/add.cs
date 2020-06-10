@@ -1,8 +1,8 @@
-﻿using GoryaynovDB.Logic;
-using GoryaynovDB.Models;
+﻿using DB.Logic;
+using DB.Models;
 using System;
 
-namespace GoryaynovDB
+namespace DB
 {
     public class add
     {
