@@ -24,7 +24,7 @@ namespace DB.Models
         [Column("price")]
         public int Price { get; set; }
 
-        [Required]
+        [Required] 
         [Column("type_id")]
         public int typeId { get; set; }
         [Required]
