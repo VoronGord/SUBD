@@ -1,10 +1,10 @@
-﻿using GoryaynovDB.Models;
+﻿using DB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GoryaynovDB.Logic
+namespace DB.Logic
 {
     static class TypeLogic
     {

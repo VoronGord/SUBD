@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace GoryaynovDB.Models
+namespace DB.Models
 {
     [Table("department")]
     public class DType
