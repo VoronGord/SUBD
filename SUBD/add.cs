@@ -6,6 +6,7 @@ namespace DB
 {
     public class add
     {
+        
         public double CreateType()
         {
             var type = new Models.DType
