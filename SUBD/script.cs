@@ -9,6 +9,7 @@ namespace DB
 {
     class script
     {
+        
         public double LabScript()
         {
             // вывести число преподавателей по кафедрам
