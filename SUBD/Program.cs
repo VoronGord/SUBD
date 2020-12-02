@@ -9,6 +9,7 @@ using System.Text;
 
 namespace DB
 {
+    
     class Program
     {
         public static DatabaseContext context = null;
