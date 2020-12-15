@@ -1,4 +1,4 @@
-﻿using DB.Logic;
+using DB.Logic;
 using DB.Models;
 using System;
 
@@ -6,13 +6,11 @@ namespace DB
 {
     public class add
     {
-        
-        public double CreateType()
+        public double CreateType(string types)
         {
             var type = new Models.DType
             {
-                Types = "футболка"
-
+                Types = types
             };
             var startTime = DateTime.Now;
             TypeLogic.Create(type);
@@ -20,12 +18,12 @@ namespace DB
             Console.WriteLine("---Скрипт CreateType выполнен");
             return (int)(finishTime - startTime).TotalMilliseconds;
         }
-        public double CreateClient()
+        public double CreateClient(string numbers, string names)
         {
             var client = new Client
             {
-                Number = "89176265555",
-                Name = "Dmitriy"
+                Number = numbers,
+                Name = names
 
             };
             var startTime = DateTime.Now;
@@ -34,12 +32,12 @@ namespace DB
             Console.WriteLine("---Скрипт CreateClient выполнен");
             return (finishTime - startTime).TotalMilliseconds;
         }
-        public double CreateProvider()
+        public double CreateProvider(string numbers, string names)
         {
             var provider = new Provider
             {
-                Name = "Oleg",
-                Number = "834985385439"
+                Name = names,
+                Number = numbers
             };
             var startTime = DateTime.Now;
             ProviderLogic.Create(provider);
