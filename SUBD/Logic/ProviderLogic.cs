@@ -1,17 +1,16 @@
-﻿using DB.Models;
+using DB.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
 namespace DB.Logic
 {
     static class ProviderLogic
     {
         static DatabaseContext context = Program.context;
-        public static void Create(Provider model)
+        public void Create(Provider model)
         {
             if (model.Number == null)
             {
@@ -30,7 +29,7 @@ namespace DB.Logic
             });
             context.SaveChanges();
         }
-        public static List<Provider> Read(Provider model, int pageSize = Program.pageSize, int currentPage = 0)
+        public List<Provider> Read(Provider model, int pageSize = Program.pageSize, int currentPage = 0)
         {
             List<Provider> result = new List<Provider>();
             if (model.Number != null)
@@ -50,7 +49,7 @@ namespace DB.Logic
             }
             return result;
         }
-        public static void Update(Provider model)
+        public void Update(Provider model)
         {
             Provider Provider = context.Providers.FirstOrDefault(rec => rec.Name.Equals(model.Name));
             Provider.Name = model.Name;
@@ -58,7 +57,7 @@ namespace DB.Logic
 
             context.SaveChanges();
         }
-        public static void Delete(Provider model)
+        public void Delete(Provider model)
         {
             Models.Provider Provider = context.Providers.FirstOrDefault(rec => rec.Id == model.Id);
             context.Providers.Remove(Provider);
