@@ -1,16 +1,15 @@
-﻿using DB.Models;
+using DB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 
 namespace DB.Logic
 {
     static class TypeLogic
     {
         static DatabaseContext context = Program.context;
-        public static void Create(Models.DType model)
+        public  void Create(Models.DType model)
         {
             if (model.Types == null)
             {
@@ -24,7 +23,7 @@ namespace DB.Logic
             });
             context.SaveChanges();
         }
-        public static List<Models.DType> Read(Models.DType model, int pageSize = Program.pageSize, int currentPage = 0)
+        public  List<Models.DType> Read(Models.DType model, int pageSize = Program.pageSize, int currentPage = 0)
         {
             List<Models.DType> result = new List<Models.DType>();
             if (model.Types != null)
@@ -44,13 +43,13 @@ namespace DB.Logic
             }
             return result;
         }
-        public static void Update(Models.DType model)
+        public  void Update(Models.DType model)
         {
             Models.DType type = context.Types.FirstOrDefault(rec => rec.Types.Equals(model.Types));
             type.Types = model.Types;
             context.SaveChanges();
         }
-        public static void Delete(Models.DType model)
+        public  void Delete(Models.DType model)
         {
             Models.DType type = context.Types.FirstOrDefault(rec => rec.Id == model.Id);
             context.Types.Remove(type);
