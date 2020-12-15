@@ -1,17 +1,16 @@
-﻿using DB.Models;
+using DB.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
 namespace DB.Logic
 {
     static class ProductLogic
     {
         static DatabaseContext context = Program.context;
-        public static void Create(Product model)
+        public void Create(Product model)
         {
             if (model.Name == 0)
             {
@@ -46,7 +45,7 @@ namespace DB.Logic
             });
             context.SaveChanges();
         }
-        public static List<Product> Read(Product model, int pageSize = Program.pageSize, int currentPage = 0)
+        public  List<Product> Read(Product model, int pageSize = Program.pageSize, int currentPage = 0)
         {
             List<Product> result = new List<Product>();
             if (model.Id != 0)
@@ -70,7 +69,7 @@ namespace DB.Logic
             }
             return result;
         }
-        public static void Update(Product model)
+        public void Update(Product model)
         {
             Product product = context.Products.FirstOrDefault(rec => rec.Id == model.Id);
             product.Name = model.Name;
@@ -80,7 +79,7 @@ namespace DB.Logic
             product.ProviderId = model.ProviderId;
             context.SaveChanges();
         }
-        public static void Delete(Product model)
+        public void Delete(Product model)
         {
             Product product = context.Products.FirstOrDefault(rec => rec.Id == model.Id);
             context.Products.Remove(product);
