@@ -1,4 +1,4 @@
-﻿using DB;
+using DB;
 
 using DB.Logic;
 using DB.Models;
@@ -9,7 +9,6 @@ using System.Text;
 
 namespace DB
 {
-    
     class Program
     {
         public static DatabaseContext context = null;
@@ -26,19 +25,19 @@ namespace DB
             try
             {
                 context = new DatabaseContext();
-                Console.WriteLine(add.CreateType());
-                Console.WriteLine(add.CreateClient());
-                Console.WriteLine(add.CreateProvider());
-                Console.WriteLine(read.ReadClients());
-                Console.WriteLine(read.ReadClients2());
-                Console.WriteLine(upd.UpdateType());
-                Console.WriteLine(upd.UpdateProvider());
-                Console.WriteLine(del.DeleteType());
-                Console.WriteLine(del.DeleteClient());
-                Console.WriteLine(del.DeleteProvider());
-                Console.WriteLine(sqr.LabScript());
-                Console.WriteLine(sqr.LabScript2());
-                Console.WriteLine(sqr.Script3());
+                Console.WriteLine(add.CreateType("футболка"));
+                Console.WriteLine(add.CreateClient("dmitriy", "845345433455"));
+                Console.WriteLine(add.CreateProvider("oleg", "'865756757565"));
+                Console.WriteLine(read.ReadClients("dmitriy"));
+                Console.WriteLine(read.ReadClients2("8956565756546"));
+                Console.WriteLine(upd.UpdateType("футболка'", "shouts"));
+                Console.WriteLine(upd.UpdateProvider("Oleg", "Adidas"));
+                Console.WriteLine(del.DeleteType("shuts"));
+                Console.WriteLine(del.DeleteClient("dmitriy"));
+                Console.WriteLine(del.DeleteProvider(5001));
+                Console.WriteLine(sqr.LabScriptSershClien());
+                Console.WriteLine(sqr.LabScriptGroup());
+                Console.WriteLine(sqr.ScriptSerch_forPrice());
 
 
 
