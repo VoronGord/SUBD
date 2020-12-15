@@ -1,19 +1,18 @@
-﻿using DB.Logic;
+using DB.Logic;
 using DB.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-
 namespace DB
 {
     class read
     {
-        public double ReadClients()
+        public double ReadClients(string names)
         {
             var client = new Client
             {
-                Name = "Dmitriy"
+                Name = names
             };
             var startTime = DateTime.Now;
             var clients = ClientLogic.Read(client);
@@ -25,9 +24,9 @@ namespace DB
             Console.WriteLine("---Скрипт ReadClient выполнен");
             return (finishTime - startTime).TotalMilliseconds;
         }
-        public double ReadClients2()
+        public double ReadClients2(string nimbers)
         {
-            var client = new Client { Number = "89865538567" };
+            var client = new Client { Number = nimbers };
             var startTime = DateTime.Now;
             var clients = ClientLogic.Read(client);
             var finishTime = DateTime.Now;
