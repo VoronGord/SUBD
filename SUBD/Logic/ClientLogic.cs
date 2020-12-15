@@ -1,10 +1,9 @@
-﻿using DB.Models;
+using DB.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 
 namespace DB.Logic
 {
@@ -31,7 +30,7 @@ namespace DB.Logic
             context.SaveChanges();
         }
         
-        public static List<Models.Client> Read(Models.Client model, int pageSize = Program.pageSize, int currentPage = 0)
+        public  List<Models.Client> Read(Models.Client model, int pageSize = Program.pageSize, int currentPage = 0)
         {
             List<Models.Client> result = new List<Models.Client>();
             if (model.Name != null)
@@ -51,7 +50,7 @@ namespace DB.Logic
             }
             return result;
         }
-        public static void Update(Client model)
+        public void Update(Client model)
         {
             Client client = context.Clients.FirstOrDefault(rec => rec.Name.Equals(model.Name));
             client.Name = model.Name;
@@ -59,7 +58,7 @@ namespace DB.Logic
                  
             context.SaveChanges();
         }
-        public static void Delete(Client model)
+        public void Delete(Client model)
         {
             Client client = context.Clients.FirstOrDefault(rec => rec.Id == model.Id);
             context.Clients.Remove(client);
