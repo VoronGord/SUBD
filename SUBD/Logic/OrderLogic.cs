@@ -1,4 +1,4 @@
-﻿using DB.Models;
+using DB.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using System;
@@ -6,13 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
 namespace DB.Logic
 {
     static class OrderLogic
     {
         static DatabaseContext context = Program.context;
-        public static void Create(Order model)
+        public  void Create(Order model)
         {
             if (model.Date.CompareTo(new DateTime(1900, 1, 1)) < 0)
             {
@@ -34,7 +33,7 @@ namespace DB.Logic
             });
             context.SaveChanges();
         }
-        public static List<Order> Read(Order model, int pageSize = Program.pageSize, int currentPage = 0)
+        public  List<Order> Read(Order model, int pageSize = Program.pageSize, int currentPage = 0)
         {
             List<Order> result = new List<Order>();
             if (model.Date != null)
@@ -54,7 +53,7 @@ namespace DB.Logic
             }
             return result;
         }
-        public static void Update(Order model)
+        public void Update(Order model)
         {
             Order order = context.Orders.FirstOrDefault(rec => rec.Id == model.Id);
             order.Date = model.Date;
@@ -62,7 +61,7 @@ namespace DB.Logic
               order.ProductId = model.ProductId;
             context.SaveChanges();
         }
-        public static void Delete(Order model)
+        public void Delete(Order model)
         {
             Order order = context.Orders.FirstOrDefault(rec => rec.Id == model.Id);
             context.Orders.Remove(order);
